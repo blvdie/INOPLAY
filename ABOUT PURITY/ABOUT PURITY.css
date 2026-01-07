@@ -1,0 +1,372 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cormorant', serif;
+  background: #08090B;
+  width: 1860px;
+  min-height: 2716px;
+  margin: 0 auto;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.about-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1860px;
+  height: 80px;
+  background: transparent;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+.nav-frame {
+  position: absolute;
+  top: 27px;
+  left: 55px;
+  width: 347px;
+  height: 26px;
+}
+
+.nav-frame a {
+  position: absolute;
+  top: 3px;
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #FFFFFF;
+  text-decoration: none;
+  overflow: visible;
+}
+
+.nav-frame .about     { left: 0; }
+.nav-frame .catalog   { left: 72px; }
+.nav-frame .archive   { left: 152px; }
+.nav-frame .contacts  { left: 233px; }
+.nav-frame .info      { left: 321px; }
+
+.nav-frame a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #FFFFFF; 
+  transition: width 0.3s ease;
+}
+
+.nav-frame a:hover::after {
+  width: 100%;
+}
+
+.logo-frame {
+  position: absolute;
+  top: 0;
+  left: 868px;
+  width: 124px;
+  height: 80px;
+}
+
+.main-logo {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  font-family: 'Cormorant', serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1;
+  color: #FFFFFF;
+}
+
+.sub-logo {
+  position: absolute;
+  top: 51px;
+  left: 31px;
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  color: #FFFFFF;
+}
+
+.cart-link {
+  position: absolute;
+  top: 25px;
+  left: 1776px;
+  width: 29px;
+  height: 29px;
+  display: block;
+}
+
+.cart-link img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  border: none;
+}
+
+.hero-video-container {
+  position: relative;
+  width: 1860px;
+  height: 958px;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.55;
+}
+
+.hero-title {
+  position: absolute;
+  top: 418px;
+  left: 753px;
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  font-size: 100px;
+  line-height: 1;
+  color: #FFFFFF;
+  white-space: nowrap;
+  z-index: 10; 
+}
+
+.content-frame {
+  position: relative;
+  width: 1860px;
+  height: 696px;
+  background: #08090B;
+}
+
+.text-container {
+  position: absolute;
+  top: 91px;
+  left: 606px;
+  width: 708px;
+  height: 514px;
+}
+
+.dash {
+  width: 12px;
+  height: 44px;
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.dash.top {
+  position: absolute;
+  top: 0;
+  left: 348px;
+}
+
+.dash.bottom {
+  position: absolute;
+  top: 470px;
+  left: 348px;
+}
+
+.description {
+  position: absolute;
+  top: 57px;
+  left: 71px;
+  width: 566px;
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4; 
+  color: #FFFFFF;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.gallery-section {
+  position: relative;
+  width: 1860px;
+  height: 958px;
+}
+
+    .photo-gallery {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1860px;
+      height: 958px;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    .gallery-track {
+      display: flex;
+      height: 100%;
+      width: max-content;
+    }
+
+    .gallery-track img {
+      width: 789px;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .photo-gallery:not(.active) {
+      display: none;
+    }
+
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1860px;
+      height: 958px; 
+      display: none;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    .video-container.active {
+      display: block;
+    }
+
+    .video-container.video-muted {
+      cursor: url('../img/volume.png') 24 24, pointer;
+    }
+
+    .video-container.video-unmuted {
+      cursor: url('../img/volume\ up.png') 24 24, pointer;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      outline: none;
+    }
+
+    .control-btn {
+      position: absolute;
+      font-family: 'Cormorant', serif;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 110;
+    }
+
+    #runwayBtn {
+      top: 887px;
+      left: 840px;
+      width: 89px;
+      height: 43px;
+      background: transparent;
+      color: #FFFFFF;
+    }
+
+    #runwayBtn.active {
+      background: #FFFFFF;
+      color: #000000;
+    }
+
+    #videoBtn {
+      top: 899px;
+      left: 960px;
+      width: 49px;
+      height: 19px;
+      background: transparent;
+      color: #FFFFFF;
+    }
+
+    #videoBtn.active {
+      top: 887px;
+      left: 949px;
+      width: 71px;
+      height: 43px;
+      background: #FFFFFF;
+      color: #000000;
+    }
+
+.site-footer {
+  position: absolute;
+  top: 2612px;
+  width: 1860px;
+  height: 104px;
+  background: #08090B;
+}
+
+.footer-logo {
+  position: absolute;
+  top: 27px;
+  left: 50px;
+  width: 67px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.footer-copyright {
+  position: absolute;
+  top: 42px;
+  left: 1695px;
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.footer-nav {
+  position: absolute;
+  top: 42px;
+  left: 615px;
+  width: 629px;
+  height: 19px;
+}
+
+.footer-nav .footer-link {
+  position: absolute;
+  top: 0;
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  color: #FFFFFF;
+  text-decoration: none;
+  overflow: visible;
+}
+
+.footer-nav .footer-link:nth-child(1) { left: 8px; }
+.footer-nav .footer-link:nth-child(2) { left: 115px; }
+.footer-nav .footer-link:nth-child(3) { left: 230px; }
+.footer-nav .footer-link:nth-child(4) { left: 435px; }
+.footer-nav .footer-link:nth-child(5) { left: 558px; }
+
+.footer-nav .footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #FFFFFF;
+  transition: width 0.3s ease;
+}
+
+.footer-nav .footer-link:hover::after {
+  width: 100%;
+}

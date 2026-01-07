@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INOPLAY</title>
+    <link rel="icon" href="../img/logo.png" type="image/icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../ABOUT PURITY/ABOUT PURITY.css">
+</head>
+<body>
+  <header class="about-header" id="header">
+    <nav class="nav-frame">
+      <a href="#" class="about">about</a>
+      <a href="../CATEGORIES/CATEGORIES.html" class="catalog">catalog</a>
+      <a href="../ARCHIVE/ARCHIVE.HTML" class="archive">archive</a>
+      <a href="#" class="contacts">contacts</a>
+      <a href="#" class="info">info</a>
+    </nav>
+    <div class="logo-frame">
+      <div class="main-logo">1NoPLAY</div>
+      <div class="sub-logo">ARCHIVE</div>
+    </div>
+    <a href="../cart/cart.html" class="cart-link">
+      <img src="../img/cart white.png" alt="Cart">
+    </a>
+  </header>
+
+  <div class="hero-video-container">
+    <video class="hero-video" src="../video/ABOUT PURITY.MOV" autoplay loop muted playsinline></video>
+    <div class="hero-title">PURITY</div>
+  </div>
+
+  <div class="content-frame">
+    <div class="text-container">
+      <div class="dash top">-</div>
+      <div class="description">
+«Purity»
+
+This couture collection is dedicated to the purity and innocence of the cosmic soul, which incarnated in a female body in a contradictory and dualistic world on the planet Earth and learns femininity, its unique charm, reveals step by step feminine energy and conquers this world with its sensuality, tenderness and love.
+
+This story of the alien girl, her inner states and feelings which are reflected in the girl's outer appearance by our couture pieces.
+
+«The collection is a work in progress, each piece is designed and sewn by hand by me, which adds value and uniqueness as it is my personal story and energy I put into the material thing» - from designer Marija Gavrilova
+
+Our brand would welcome any of your support to realize our Alien Collection sooner rather than later.
+      </div>
+      <div class="dash bottom">-</div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+  <div class="photo-gallery active" id="photoGallery">
+    <div class="gallery-track" id="galleryTrack">
+      <img src="../img/purity g 1.png" alt="1">
+      <img src="../img/purity g 2.png" alt="2">
+      <img src="../img/purity g 1.png" alt="3">
+      <img src="../img/purity g 4.png" alt="4">
+      <img src="../img/purity g 5.png" alt="5">
+      <img src="../img/purity g 6.png" alt="6">
+      <img src="../img/purity g 1.png" alt="1">
+      <img src="../img/purity g 2.png" alt="2">
+      <img src="../img/purity g 1.png" alt="3">
+      <img src="../img/purity g 4.png" alt="4">
+      <img src="../img/purity g 5.png" alt="5">
+      <img src="../img/purity g 6.png" alt="6">
+    </div>
+  </div>
+
+  <div class="video-container" id="videoContainer">
+    <video id="mainVideo" src="../video/inoplanetyanka couture [get-save.com].mp4" muted autoplay loop playsinline></video>
+  </div>
+
+  <div class="control-btn active" id="runwayBtn">RUNWAY</div>
+  <div class="control-btn" id="videoBtn">VIDEO</div>
+  </div>
+
+  <footer class="site-footer">
+    <img src="../img/logo.png" alt="1NoPLAY" class="footer-logo">
+    <div class="footer-copyright">© 2024 1N0PLAY</div>
+    <nav class="footer-nav">
+      <a href="#" class="footer-link">about</a>
+      <a href="#" class="footer-link">catalog</a>
+      <a href="#" class="footer-link">payment and delivery</a>
+      <a href="#" class="footer-link">contacts</a>
+      <a href="#" class="footer-link">instagram</a>
+    </nav>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header');
+    const heroSection = document.querySelector('.hero-video-container');
+    const contentSection = document.querySelector('.content-frame');
+    const gallerySection = document.querySelector('.gallery-section');
+
+    const updateHeaderStyle = () => {
+      const heroRect = heroSection.getBoundingClientRect();
+      const contentRect = contentSection.getBoundingClientRect();
+      const galleryRect = gallerySection.getBoundingClientRect();
+
+      if (heroRect.top <= 0 && heroRect.bottom > 0) {
+        header.style.background = 'transparent';
+      }
+      else if (contentRect.top <= 80 && contentRect.bottom > 80) {
+        header.style.background = '#08090B';
+      }
+      else if (galleryRect.top <= 80 && galleryRect.bottom > 80) {
+        header.style.background = 'transparent';
+      }
+      else {
+        header.style.background = 'transparent';
+      }
+    };
+
+    window.addEventListener('scroll', updateHeaderStyle);
+    updateHeaderStyle();
+
+    const gallery = document.getElementById('photoGallery');
+    const track = document.getElementById('galleryTrack');
+    
+    if (gallery && track) {
+      const singleImageWidth = 789;
+      const totalImages = 6;
+      const totalWidth = singleImageWidth * totalImages;
+      const doubleWidth = totalWidth * 2;
+      
+      let scrollPosition = totalWidth;
+      track.style.transform = `translateX(-${scrollPosition}px)`;
+      
+      gallery.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        scrollPosition += e.deltaY;
+        track.style.transform = `translateX(-${scrollPosition}px)`;
+        track.style.transition = 'transform 0s';
+        
+        if (scrollPosition >= doubleWidth - 1920) {
+          scrollPosition -= totalWidth;
+          track.style.transform = `translateX(-${scrollPosition}px)`;
+        } else if (scrollPosition <= 0) {
+          scrollPosition += totalWidth;
+          track.style.transform = `translateX(-${scrollPosition}px)`;
+        }
+      }, { passive: false });
+    }
+
+    const videoContainer = document.getElementById('videoContainer');
+    const video = document.getElementById('mainVideo');
+    const runwayBtn = document.getElementById('runwayBtn');
+    const videoBtn = document.getElementById('videoBtn');
+
+    if (!videoContainer || !video || !runwayBtn || !videoBtn) return;
+
+    const updateCursor = () => {
+      videoContainer.classList.remove('video-muted', 'video-unmuted');
+      videoContainer.classList.add(video.muted ? 'video-muted' : 'video-unmuted');
+    };
+
+    videoBtn.addEventListener('click', () => {
+      document.getElementById('photoGallery').classList.remove('active');
+      videoContainer.classList.add('active');
+      runwayBtn.classList.remove('active');
+      videoBtn.classList.add('active');
+      updateCursor();
+    });
+
+    runwayBtn.addEventListener('click', () => {
+      videoContainer.classList.remove('active');
+      document.getElementById('photoGallery').classList.add('active');
+      videoBtn.classList.remove('active');
+      runwayBtn.classList.add('active');
+    });
+
+    videoContainer.addEventListener('click', () => {
+      video.muted = !video.muted;
+      updateCursor();
+    });
+
+    updateCursor();
+  });
+</script>
+</body>
+</html>

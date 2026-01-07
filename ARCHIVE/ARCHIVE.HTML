@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INOPLAY</title>
+    <link rel="icon" href="../img/logo.png" type="image/icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../ARCHIVE/ARCHIVE.CSS">
+</head>
+<body>
+  <header>
+    <nav class="nav-frame">
+      <a href="#" class="about">about</a>
+      <a href="../CATEGORIES/CATEGORIES.html" class="catalog">catalog</a>
+      <a href="../ARCHIVE/ARCHIVE.HTML" class="archive">archive</a>
+      <a href="#" class="contacts">contacts</a>
+      <a href="#" class="info">info</a>
+    </nav>
+
+    <div class="logo-frame">
+      <div class="main-logo">1NoPLAY</div>
+      <div class="sub-logo">ARCHIVE</div>
+    </div>
+
+    <a href="../cart/cart.html" class="cart-link">
+      <img src="../img/cart white.png" alt="Cart">
+    </a>
+  </header>
+
+    <div class="purity-frame" id="purityCarousel"> 
+        <div class="purity-header">
+            <span class="purity-title" id="purityTitle">PURITY</span>
+            <div class="more-about">
+            <span>more about →</span>
+        </div>
+    </div>
+
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="../img/purity1.png" alt="Purity 1">
+        <img src="../img/purity2.png" alt="Purity 2">
+        <img src="../img/purity3.png" alt="Purity 3">
+        <img src="../img/purity4.png" alt="Purity 4">
+        <img src="../img/purity5.png" alt="Purity 5">
+        <img src="../img/purity6.png" alt="Purity 6">
+        <img src="../img/purity1.png" alt="Purity 1">
+        <img src="../img/purity2.png" alt="Purity 2">
+        <img src="../img/purity3.png" alt="Purity 3">
+        <img src="../img/purity4.png" alt="Purity 4">
+        <img src="../img/purity5.png" alt="Purity 5">
+        <img src="../img/purity6.png" alt="Purity 6">
+      </div>
+    </div>
+  </div>
+
+<div class="ss25-frame">
+  <div class="ss25-header">
+    <span class="ss25-title">FASHION SHOW SPRING/SUMMER 25’</span>
+    <div class="more-about">
+      <span>more about →</span>
+    </div>
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-track" id="carouselTrack2">
+      <img src="../img/ss25 1.png" alt="SS25 1">
+      <img src="../img/ss25 2.png" alt="SS25 2">
+      <img src="../img/ss25 3.png" alt="SS25 3">
+      <img src="../img/ss25 4.png" alt="SS25 4">
+      <img src="../img/ss25 5.png" alt="SS25 5">
+      <img src="../img/ss25 6.png" alt="SS25 6">
+      <img src="../img/ss25 1.png" alt="SS25 1">
+      <img src="../img/ss25 2.png" alt="SS25 2">
+      <img src="../img/ss25 3.png" alt="SS25 3">
+      <img src="../img/ss25 4.png" alt="SS25 4">
+      <img src="../img/ss25 5.png" alt="SS25 5">
+      <img src="../img/ss25 6.png" alt="SS25 6">
+    </div>
+  </div>
+</div>
+
+<div class="deus-frame">
+  <div class="deus-header">
+    <span class="deus-title">DEUS FASHION SHOW 25’</span>
+    <div class="more-about">
+      <span>more about →</span>
+    </div>
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="../img/deus 1.png" alt="Deus 1">
+      <img src="../img/deus 2.png" alt="Deus 2">
+      <img src="../img/deus 3.png" alt="Deus 3">
+      <img src="../img/deus 4.png" alt="Deus 4">
+      <img src="../img/deus 5.png" alt="Deus 5">
+      <img src="../img/deus 6.png" alt="Deus 6">
+      <img src="../img/deus 1.png" alt="Deus 1">
+      <img src="../img/deus 2.png" alt="Deus 2">
+      <img src="../img/deus 3.png" alt="Deus 3">
+      <img src="../img/deus 4.png" alt="Deus 4">
+      <img src="../img/deus 5.png" alt="Deus 5">
+      <img src="../img/deus 6.png" alt="Deus 6">
+    </div>
+  </div>
+</div>
+
+  <footer class="site-footer">
+    <img src="../img/logo.png" alt="1NoPLAY" class="footer-logo">
+    <div class="footer-copyright">© 2024 1N0PLAY</div>
+    <nav class="footer-nav">
+      <a href="#" class="footer-link">about</a>
+      <a href="#" class="footer-link">catalog</a>
+      <a href="#" class="footer-link">payment and delivery</a>
+      <a href="#" class="footer-link">contacts</a>
+      <a href="#" class="footer-link">instagram</a>
+    </nav>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const purityTitle = document.getElementById('purityTitle');
+    if (purityTitle) {
+      purityTitle.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = '../ABOUT PURITY/ABOUT PURITY.html';
+      });
+    }
+
+    const purityFrame = document.getElementById('purityCarousel');
+    if (purityFrame) {
+      purityFrame.addEventListener('click', (e) => {
+        if (e.target.closest('.purity-title')) return;
+        window.location.href = '../PURITY GALERY/PURITY GALERY.html';
+      });
+    }
+  });
+</script>
+</body>
+</html>
