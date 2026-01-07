@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INOPLAY</title>
+    <link rel="icon" href="../img/logo.png" type="image/icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../PURITY GALERY/PURITY GALERY.css">
+</head>
+<body>
+  <header class="gallery-header">
+    <a href="../archive/archive.html" class="back-btn">←</a>
+
+    <div class="logo-frame">
+      <div class="main-logo">1NoPLAY</div>
+      <div class="sub-logo">ARCHIVE</div>
+    </div>
+
+    <div class="page-title">PURITY</div>
+  </header>
+
+<div class="gallery-section">
+    <div class="photo-gallery active" id="photoGallery">
+      <div class="gallery-track" id="galleryTrack">
+        <img src="../img/purity g 1.png" alt="1">
+        <img src="../img/purity g 2.png" alt="2">
+        <img src="../img/purity g 1.png" alt="3">
+        <img src="../img/purity g 4.png" alt="4">
+        <img src="../img/purity g 5.png" alt="5">
+        <img src="../img/purity g 6.png" alt="6">
+        <img src="../img/purity g 1.png" alt="1">
+        <img src="../img/purity g 2.png" alt="2">
+        <img src="../img/purity g 1.png" alt="3">
+        <img src="../img/purity g 4.png" alt="4">
+        <img src="../img/purity g 5.png" alt="5">
+        <img src="../img/purity g 6.png" alt="6">
+      </div>
+    </div>
+
+    <div class="video-container" id="videoContainer">
+      <video id="mainVideo" src="../video/inoplanetyanka couture [get-save.com].mp4" muted autoplay loop playsinline></video>
+    </div>
+
+    <div class="control-btn active" id="runwayBtn">RUNWAY</div>
+    <div class="control-btn" id="videoBtn">VIDEO</div>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gallery = document.getElementById('photoGallery');
+    const track = document.getElementById('galleryTrack');
+    
+    if (!gallery || !track) return;
+    
+    const singleImageWidth = 789;
+    const totalImages = 6;
+    const totalWidth = singleImageWidth * totalImages;
+    const doubleWidth = totalWidth * 2; 
+    
+    let scrollPosition = totalWidth;
+    track.style.transform = `translateX(-${scrollPosition}px)`;
+    
+    gallery.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      
+      scrollPosition += e.deltaY;
+      
+      track.style.transform = `translateX(-${scrollPosition}px)`;
+      track.style.transition = 'transform 0s';
+      
+      if (scrollPosition >= doubleWidth - 1920) {
+        scrollPosition -= totalWidth;
+        track.style.transform = `translateX(-${scrollPosition}px)`;
+        track.style.transition = 'transform 0s';
+      } else if (scrollPosition <= 0) {
+        scrollPosition += totalWidth;
+        track.style.transform = `translateX(-${scrollPosition}px)`;
+        track.style.transition = 'transform 0s';
+      }
+    }, { passive: false });
+
+    const videoContainer = document.getElementById('videoContainer');
+    const video = document.getElementById('mainVideo');
+    const runwayBtn = document.getElementById('runwayBtn');
+    const videoBtn = document.getElementById('videoBtn');
+
+    if (!videoContainer || !video || !runwayBtn || !videoBtn) return;
+
+    const updateCursor = () => {
+      videoContainer.classList.remove('video-muted', 'video-unmuted');
+      videoContainer.classList.add(video.muted ? 'video-muted' : 'video-unmuted');
+    };
+
+    videoBtn.addEventListener('click', () => {
+      document.querySelector('.photo-gallery').classList.remove('active');
+      videoContainer.classList.add('active');
+      runwayBtn.classList.remove('active');
+      videoBtn.classList.add('active');
+      updateCursor();
+    });
+
+    runwayBtn.addEventListener('click', () => {
+      videoContainer.classList.remove('active');
+      document.querySelector('.photo-gallery').classList.add('active');
+      videoBtn.classList.remove('active');
+      runwayBtn.classList.add('active');
+    });
+
+    videoContainer.addEventListener('click', () => {
+      video.muted = !video.muted;
+      updateCursor();
+    });
+
+    updateCursor();
+  });
+</script>
+</body>
+</html>
