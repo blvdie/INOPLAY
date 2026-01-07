@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INOPLAY</title>
+    <link rel="icon" href="../img/logo.png" type="image/icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CATEGORIES/CATEGORIES.css">
+</head>
+</head>
+<body>
+  <header>
+    <nav class="nav-frame">
+      <a href="#" class="about">about</a>
+      <a href="../CATEGORIES/CATEGORIES.html" class="catalog">catalog</a>
+      <a href="../ARCHIVE/ARCHIVE.HTML" class="archive">archive</a>
+      <a href="#" class="contacts">contacts</a>
+      <a href="#" class="info">info</a>
+    </nav>
+
+    <div class="logo">1NoPLAY</div>
+
+    <a href="../cart/cart.html" class="cart-link">
+      <img src="../img/cart.png" alt="Cart">
+    </a>
+  </header>
+
+  <aside class="categories-menu">
+    <a href="#" class="category-link">ALL</a>
+    <a href="#" class="category-link">T-SHIRT</a>
+    <a href="#" class="category-link">TOPS</a>
+    <a href="#" class="category-link">LONGSLEEVE</a>
+    <a href="#" class="category-link">HOODIE</a>
+    <a href="#" class="category-link">REFLECTIVE</a>
+    <a href="#" class="category-link">DRESSES</a>
+    <a href="#" class="category-link">SKIRTS</a>
+    <a href="#" class="category-link">JEANS</a>
+    <a href="#" class="category-link">JACKET</a>
+    <a href="#" class="category-link">BAGS</a>
+    <a href="#" class="category-link">CUSTOM</a>
+    <a href="#" class="category-link">LIMITED EDITION</a>
+    <a href="#" class="category-link">ACCESSORIES & ARTEFACTS</a>
+    <a href="#" class="category-link">MEN’S CLOTHES</a>
+  </aside>
+
+<div class="categories-grid">
+  <a href="../new/new.html" class="category-card">
+    <video src="../video/NEW.MOV" muted autoplay loop playsinline class="slow-video"></video>
+    <div class="category-label">NEW</div>
+  </a>
+
+  <a href="../base/base.html" class="category-card base">
+    <video src="../video/BASE.MOV" muted autoplay loop playsinline class="slow-video"></video>
+    <div class="category-label">BASE</div>
+  </a>
+
+  <a href="../couture/couture.html" class="category-card couture">
+    <video src="../video/COUTURE.MOV" muted autoplay loop playsinline class="slow-video"></video>
+    <div class="category-label">COUTURE</div>
+  </a>
+
+  <a href="../vintage/vintage.html" class="category-card vintage">
+    <video src="../video/VINTAGE.MP4" muted autoplay loop playsinline class="slow-video"></video>
+    <div class="category-label">VINTAGE</div>
+  </a>
+</div>
+
+  <footer class="site-footer">
+    <img src="../img/logo.png" alt="1NoPLAY" class="footer-logo">
+    <div class="footer-copyright">© 2024 1N0PLAY</div>
+    <nav class="footer-nav">
+      <a href="#" class="footer-link">about</a>
+      <a href="#" class="footer-link">catalog</a>
+      <a href="#" class="footer-link">payment and delivery</a>
+      <a href="#" class="footer-link">contacts</a>
+      <a href="#" class="footer-link">instagram</a>
+    </nav>
+  </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('.slow-video');
+    videos.forEach(video => {
+      video.playbackRate = 0.5;
+    });
+  });
+</script>
+</body>
+</html>
