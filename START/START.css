@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1860px;
+  min-height: 958px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Cormorant', serif;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 10.9;
+}
+
+.logo {
+  position: absolute;
+  top: 366px;
+  left: 636px;
+  width: 588px;
+  height: 170px;
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+  font-size: 140px;
+}
+
+.shop-btn {
+  position: absolute;
+  top: 536px;
+  left: 849px;
+  transform: translate(-50%, -50%);
+  margin-top: 30px;
+  width: 161px; 
+  height: 56px;
+  border: 2px solid #FFFFFF;
+  border-radius: 75px;
+  background: transparent;
+  color: #FFFFFF;
+  font-family: 'Cormorant', serif;
+  font-weight: 700;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-btn:hover,
+.shop-btn:focus {
+  background: #FFFFFF;
+  color: #4B3976;
+  outline: none;
+}

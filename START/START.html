@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INOPLAY</title>
+  <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../START/START.css" />
+</head>
+<body>
+  <video class="background-video" src="../video/START2.mp4" muted autoplay loop playsinline></video>
+  
+  <div class="logo">INOPLAY</div>
+  <button class="shop-btn" id="shopBtn">shop now</button>
+
+  <script>
+    document.getElementById('shopBtn').addEventListener('click', () => {
+      window.location.href = '../CATEGORIES/CATEGORIES.html';
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const bgVideo = document.querySelector('.background-video');
+      if (bgVideo) {
+        bgVideo.playbackRate = 0.7;
+      }
+    });
+  </script>
+</body>
+</html>
