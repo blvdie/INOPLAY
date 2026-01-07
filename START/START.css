@@ -41,7 +41,7 @@ body {
 .shop-btn {
   position: absolute;
   top: 536px;
-  left: 849px;
+  left: 930px;
   transform: translate(-50%, -50%);
   margin-top: 30px;
   width: 161px; 
@@ -66,3 +66,4 @@ body {
   color: #4B3976;
   outline: none;
 }
+
